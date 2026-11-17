@@ -1,0 +1,19 @@
+{
+  "_note": "Déjà Vu settings for the Fernway demo site. The admin page edits the same structure; 'Load demo data' applies this file.",
+  "jiraProjects": ["OPS", "FERN"],
+  "confluenceSpaces": ["FERN"],
+  "occurredFieldName": "Occurred at",
+  "resolvedFieldName": "Resolved at",
+  "entities": {
+    "storefront-web": { "kind": "service", "aliases": ["storefront", "ssr"] },
+    "catalog-api": { "kind": "service", "aliases": ["catalog", "search"] },
+    "checkout-api": { "kind": "service", "aliases": ["checkout", "cart", "basket", "baskets"] },
+    "payments-api": { "kind": "service", "aliases": ["payments", "payrail-adapter"] },
+    "order-pipeline": { "kind": "service", "aliases": ["order-worker", "fulfillment"] },
+    "notifications": { "kind": "service", "aliases": ["mailer", "email", "emails", "sms"] },
+    "pg-main": { "kind": "resource", "aliases": ["postgres", "postgresql"] },
+    "redis-shared": { "kind": "resource", "aliases": ["redis"] },
+    "kafka-main": { "kind": "resource", "aliases": ["kafka"] },
+    "smtp-relay": { "kind": "resource", "aliases": ["mx-relay-01", "smtp"] }
+  }
+}

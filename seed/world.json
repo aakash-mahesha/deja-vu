@@ -1,0 +1,170 @@
+{
+  "company": "Fernway",
+  "product": "Fernway online plant shop (one-off orders and the monthly Care Box subscription)",
+  "today": "2026-11-16",
+  "projects": {
+    "jira": {
+      "key": "FERN",
+      "name": "Fernway Engineering",
+      "template": "com.pyxis.greenhopper.jira:gh-simplified-kanban-classic",
+      "type": "software"
+    },
+    "jsm": {
+      "key": "OPS",
+      "name": "Fernway Operations",
+      "template": "com.atlassian.servicedesk:itil-v2-service-desk-project",
+      "type": "service_desk"
+    },
+    "confluence": {
+      "key": "FERN",
+      "name": "Fernway Engineering"
+    }
+  },
+  "people": {
+    "em": {
+      "displayName": "Alana Grant",
+      "designation": "Team Lead, Manager",
+      "role": "Engineering manager",
+      "assignedBy": "designation"
+    },
+    "sre": {
+      "displayName": "Mitch Davis",
+      "designation": "ITSM Manager, Admin",
+      "role": "SRE and incident manager",
+      "assignedBy": "designation"
+    },
+    "platform": {
+      "displayName": "Jennifer Evans",
+      "designation": "Senior Cloud Engineer",
+      "role": "Platform and database (pg-main, redis-shared, kafka-main)",
+      "assignedBy": "designation"
+    },
+    "checkout": {
+      "displayName": "Ada Isadora",
+      "designation": "Development Manager",
+      "role": "Tech lead, checkout-api and payments-api",
+      "assignedBy": "designation"
+    },
+    "frontend": {
+      "displayName": "Kevin Campbell",
+      "designation": "Principal Support Engineer",
+      "role": "Owner, storefront-web",
+      "assignedBy": "random within designation group (seed 20261116)"
+    },
+    "catalog": {
+      "displayName": "Emma Paris",
+      "designation": "Senior Support Engineer",
+      "role": "Owner, catalog-api",
+      "assignedBy": "random within designation group (seed 20261116)"
+    },
+    "orders": {
+      "displayName": "Max Taylor",
+      "designation": "Engineer",
+      "role": "Owner, order-pipeline (formerly order-worker)",
+      "assignedBy": "random within designation group (seed 20261116)"
+    },
+    "notif_old": {
+      "displayName": "Ryan Lee",
+      "designation": "Product Manager",
+      "role": "Owner, notifications until 2026-08-03; then moved to the Mobile team",
+      "assignedBy": "random within designation group (seed 20261116)"
+    },
+    "notif_new": {
+      "displayName": "Cassi Owens",
+      "designation": "Product & Enterprise Manager",
+      "role": "Owner, notifications from 2026-08-03",
+      "assignedBy": "random within designation group (seed 20261116)"
+    }
+  },
+  "services": {
+    "storefront-web": {
+      "layer": "frontend",
+      "owner": "frontend",
+      "aliases": [
+        "storefront",
+        "web",
+        "ssr"
+      ],
+      "depends": [
+        "catalog-api",
+        "checkout-api",
+        "redis-shared"
+      ]
+    },
+    "catalog-api": {
+      "layer": "backend",
+      "owner": "catalog",
+      "aliases": [
+        "catalog",
+        "search"
+      ],
+      "depends": [
+        "pg-main",
+        "redis-shared"
+      ]
+    },
+    "checkout-api": {
+      "layer": "backend",
+      "owner": "checkout",
+      "aliases": [
+        "checkout",
+        "cart"
+      ],
+      "depends": [
+        "pg-main",
+        "redis-shared",
+        "payments-api",
+        "kafka-main"
+      ]
+    },
+    "payments-api": {
+      "layer": "backend",
+      "owner": "checkout",
+      "aliases": [
+        "payments",
+        "payrail-adapter"
+      ],
+      "depends": [
+        "pg-main",
+        "PayRail (external PSP)"
+      ]
+    },
+    "order-pipeline": {
+      "layer": "backend",
+      "owner": "orders",
+      "aliases": [
+        "order-worker",
+        "orders",
+        "fulfillment"
+      ],
+      "renamedFrom": "order-worker",
+      "renamedOn": "2026-06-15",
+      "depends": [
+        "kafka-main",
+        "pg-main",
+        "ShipLabel (external)"
+      ]
+    },
+    "notifications": {
+      "layer": "backend",
+      "owner": "notif_new",
+      "previousOwner": "notif_old",
+      "ownerChangedOn": "2026-08-03",
+      "aliases": [
+        "mailer",
+        "email",
+        "sms"
+      ],
+      "depends": [
+        "kafka-main",
+        "smtp-relay"
+      ]
+    }
+  },
+  "infrastructure": {
+    "pg-main": "Postgres 16 primary plus one read replica; system of record (orders, payments, inventory, carts snapshot)",
+    "redis-shared": "One Redis cluster holding the catalog cache AND shopping carts (ADR-004)",
+    "kafka-main": "Kafka cluster; topics order.created, order.paid, order.shipped, notification.requested",
+    "smtp-relay": "Outbound mail relay mx-relay-01 with a manually installed TLS certificate"
+  }
+}

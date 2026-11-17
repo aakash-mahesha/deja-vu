@@ -1,0 +1,41 @@
+# Dependencies and build output
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Forge CLI local output (tunnel bundles, caches)
+/.forge/
+
+# Site-specific or generated data (never commit: contains site ids and fetched content)
+seed/.state.json
+eval/.cache.json
+eval/results.json
+
+# Secrets and local environment
+.env
+.env.*
+*.pem
+*.key
+api-key*.txt
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editors and OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Unused template config (TypeScript is checked with `npm run typecheck`)
+.eslintrc
+
+# Working notes not needed by the app or the agent.
+# Kept on purpose: README.md, THIRD_PARTY_NOTICES.md, src/agent/prompt.md (agent prompt), seed/corpus/*.md (demo data).
+AGENTS.md
+PROGRESS.md
+docs/
+seed/SEED_PLAN.md
+eval/README.md

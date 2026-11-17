@@ -1,0 +1,1301 @@
+{
+  "note": "Seeded demo data. Ground truth for Déjà Vu matching: for each query item, which OLDER items should be surfaced (recall) and which look similar but must not match strongly (decoys).",
+  "generatedFrom": "seed/corpus/*.md",
+  "clusters": {
+    "C1": [
+      {
+        "id": "c1-inc-1",
+        "ref": "OPS-14"
+      },
+      {
+        "id": "c1-inc-2",
+        "ref": "OPS-23"
+      },
+      {
+        "id": "c1-inc-3",
+        "ref": "OPS-33"
+      },
+      {
+        "id": "c1-inc-4",
+        "ref": "OPS-42"
+      },
+      {
+        "id": "c1-inc-5",
+        "ref": "OPS-51"
+      }
+    ],
+    "C8": [
+      {
+        "id": "c8-inc-1",
+        "ref": "OPS-18"
+      },
+      {
+        "id": "c8-inc-2",
+        "ref": "OPS-39"
+      }
+    ],
+    "C2": [
+      {
+        "id": "c2-inc-1",
+        "ref": "OPS-5"
+      },
+      {
+        "id": "c2-inc-2",
+        "ref": "OPS-21"
+      },
+      {
+        "id": "c2-inc-3",
+        "ref": "OPS-35"
+      },
+      {
+        "id": "c2-inc-4",
+        "ref": "OPS-48"
+      }
+    ],
+    "C3": [
+      {
+        "id": "c3-inc-1",
+        "ref": "OPS-9"
+      },
+      {
+        "id": "c3-inc-2",
+        "ref": "OPS-19"
+      },
+      {
+        "id": "c3-inc-3",
+        "ref": "OPS-34"
+      },
+      {
+        "id": "c3-inc-4",
+        "ref": "OPS-45"
+      }
+    ],
+    "C9": [
+      {
+        "id": "c9-inc-1",
+        "ref": "OPS-1"
+      },
+      {
+        "id": "c9-inc-2",
+        "ref": "OPS-50"
+      }
+    ],
+    "C4": [
+      {
+        "id": "c4-inc-1",
+        "ref": "OPS-11"
+      },
+      {
+        "id": "c4-inc-2",
+        "ref": "OPS-29"
+      },
+      {
+        "id": "c4-inc-3",
+        "ref": "OPS-44"
+      }
+    ],
+    "C5": [
+      {
+        "id": "c5-inc-1",
+        "ref": "OPS-7"
+      },
+      {
+        "id": "c5-inc-2",
+        "ref": "OPS-27"
+      },
+      {
+        "id": "c5-inc-3",
+        "ref": "OPS-46"
+      }
+    ],
+    "C6": [
+      {
+        "id": "c6-inc-1",
+        "ref": "OPS-15"
+      },
+      {
+        "id": "c6-inc-2",
+        "ref": "OPS-38"
+      }
+    ],
+    "C7": [
+      {
+        "id": "c7-inc-1",
+        "ref": "OPS-22"
+      },
+      {
+        "id": "c7-inc-2",
+        "ref": "OPS-41"
+      }
+    ]
+  },
+  "oneOffIncidents": [
+    {
+      "id": "o-sms-ratelimit",
+      "ref": "OPS-3"
+    },
+    {
+      "id": "o-cdn-stale",
+      "ref": "OPS-4"
+    },
+    {
+      "id": "o-images-404",
+      "ref": "OPS-8"
+    },
+    {
+      "id": "o-promo-twice",
+      "ref": "OPS-13"
+    },
+    {
+      "id": "o-translations",
+      "ref": "OPS-17"
+    },
+    {
+      "id": "o-applepay",
+      "ref": "OPS-20"
+    },
+    {
+      "id": "o-warehouse-address",
+      "ref": "OPS-26"
+    },
+    {
+      "id": "o-uk-region-null",
+      "ref": "OPS-28"
+    },
+    {
+      "id": "o-kafka-disk",
+      "ref": "OPS-30"
+    },
+    {
+      "id": "o-search-accents",
+      "ref": "OPS-31"
+    },
+    {
+      "id": "o-flag-pdp",
+      "ref": "OPS-32"
+    },
+    {
+      "id": "o-replica-lag",
+      "ref": "OPS-37"
+    },
+    {
+      "id": "o-consent-filter",
+      "ref": "OPS-40"
+    },
+    {
+      "id": "o-3ds-loop",
+      "ref": "OPS-43"
+    },
+    {
+      "id": "o-dns-cname",
+      "ref": "OPS-47"
+    },
+    {
+      "id": "o-ratelimit-allowlist",
+      "ref": "OPS-49"
+    }
+  ],
+  "queries": [
+    {
+      "id": "c1-inc-1",
+      "ref": "OPS-14",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C1",
+      "recall": [
+        {
+          "id": "adr-003",
+          "ref": "4358169"
+        },
+        {
+          "id": "st-reporting-export",
+          "ref": "FERN-20"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c8-inc-1",
+      "ref": "OPS-18",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C8",
+      "recall": [],
+      "decoys": [
+        {
+          "id": "c1-inc-1",
+          "ref": "OPS-14"
+        }
+      ]
+    },
+    {
+      "id": "c1-inc-2",
+      "ref": "OPS-23",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C1",
+      "recall": [
+        {
+          "id": "c1-inc-1",
+          "ref": "OPS-14"
+        },
+        {
+          "id": "adr-003",
+          "ref": "4358169"
+        },
+        {
+          "id": "cap-mothers-day",
+          "ref": "4358201"
+        },
+        {
+          "id": "doc-checkout-flow",
+          "ref": "4390929"
+        }
+      ],
+      "decoys": [
+        {
+          "id": "c8-inc-1",
+          "ref": "OPS-18"
+        },
+        {
+          "id": "c7-inc-1",
+          "ref": "OPS-22"
+        }
+      ]
+    },
+    {
+      "id": "c1-inc-3",
+      "ref": "OPS-33",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C1",
+      "recall": [
+        {
+          "id": "c1-inc-2",
+          "ref": "OPS-23"
+        },
+        {
+          "id": "c1-pm",
+          "ref": "4096292"
+        },
+        {
+          "id": "c1-ai-pgbouncer",
+          "ref": "FERN-24"
+        },
+        {
+          "id": "c1-ai-hpa",
+          "ref": "FERN-27"
+        },
+        {
+          "id": "st-k8s-migration",
+          "ref": "FERN-34"
+        },
+        {
+          "id": "adr-003",
+          "ref": "4358169"
+        }
+      ],
+      "decoys": [
+        {
+          "id": "o-uk-region-null",
+          "ref": "OPS-28"
+        }
+      ]
+    },
+    {
+      "id": "c8-inc-2",
+      "ref": "OPS-39",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C8",
+      "recall": [
+        {
+          "id": "c8-inc-1",
+          "ref": "OPS-18"
+        }
+      ],
+      "decoys": [
+        {
+          "id": "c1-inc-2",
+          "ref": "OPS-23"
+        },
+        {
+          "id": "c1-inc-3",
+          "ref": "OPS-33"
+        }
+      ]
+    },
+    {
+      "id": "c1-inc-4",
+      "ref": "OPS-42",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C1",
+      "recall": [
+        {
+          "id": "c1-inc-2",
+          "ref": "OPS-23"
+        },
+        {
+          "id": "c1-pm",
+          "ref": "4096292"
+        },
+        {
+          "id": "c1-ai-pgbouncer",
+          "ref": "FERN-24"
+        },
+        {
+          "id": "st-care-box-renewals",
+          "ref": "FERN-37"
+        },
+        {
+          "id": "adr-003",
+          "ref": "4358169"
+        }
+      ],
+      "decoys": [
+        {
+          "id": "o-uk-region-null",
+          "ref": "OPS-28"
+        },
+        {
+          "id": "o-replica-lag",
+          "ref": "OPS-37"
+        },
+        {
+          "id": "c8-inc-2",
+          "ref": "OPS-39"
+        }
+      ]
+    },
+    {
+      "id": "c1-inc-5",
+      "ref": "OPS-51",
+      "kind": "incident",
+      "trigger": true,
+      "cluster": "C1",
+      "recall": [
+        {
+          "id": "c1-inc-4",
+          "ref": "OPS-42"
+        },
+        {
+          "id": "c1-inc-3",
+          "ref": "OPS-33"
+        },
+        {
+          "id": "c1-inc-2",
+          "ref": "OPS-23"
+        },
+        {
+          "id": "c1-inc-1",
+          "ref": "OPS-14"
+        },
+        {
+          "id": "c1-pm",
+          "ref": "4096292"
+        },
+        {
+          "id": "c1-ai-pgbouncer",
+          "ref": "FERN-24"
+        },
+        {
+          "id": "c1-ai-runbook",
+          "ref": "FERN-28"
+        },
+        {
+          "id": "adr-003",
+          "ref": "4358169"
+        },
+        {
+          "id": "rb-checkout-5xx",
+          "ref": "4194361"
+        }
+      ],
+      "decoys": [
+        {
+          "id": "c8-inc-1",
+          "ref": "OPS-18"
+        },
+        {
+          "id": "c8-inc-2",
+          "ref": "OPS-39"
+        },
+        {
+          "id": "o-uk-region-null",
+          "ref": "OPS-28"
+        },
+        {
+          "id": "o-replica-lag",
+          "ref": "OPS-37"
+        }
+      ]
+    },
+    {
+      "id": "c2-inc-1",
+      "ref": "OPS-5",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C2",
+      "recall": [
+        {
+          "id": "adr-004",
+          "ref": "4096266"
+        },
+        {
+          "id": "st-care-guides",
+          "ref": "FERN-14"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c2-inc-2",
+      "ref": "OPS-21",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C2",
+      "recall": [
+        {
+          "id": "c2-inc-1",
+          "ref": "OPS-5"
+        },
+        {
+          "id": "c2-pm",
+          "ref": "4522008"
+        },
+        {
+          "id": "c2-ai-split",
+          "ref": "FERN-15"
+        },
+        {
+          "id": "adr-004",
+          "ref": "4096266"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c2-inc-3",
+      "ref": "OPS-35",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C2",
+      "recall": [
+        {
+          "id": "c2-inc-1",
+          "ref": "OPS-5"
+        },
+        {
+          "id": "c2-inc-2",
+          "ref": "OPS-21"
+        },
+        {
+          "id": "c2-pm",
+          "ref": "4522008"
+        },
+        {
+          "id": "c2-ai-split",
+          "ref": "FERN-15"
+        },
+        {
+          "id": "adr-004",
+          "ref": "4096266"
+        },
+        {
+          "id": "rb-redis-memory",
+          "ref": "4390949"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c2-inc-4",
+      "ref": "OPS-48",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C2",
+      "recall": [
+        {
+          "id": "c2-inc-2",
+          "ref": "OPS-21"
+        },
+        {
+          "id": "c2-inc-3",
+          "ref": "OPS-35"
+        },
+        {
+          "id": "c2-pm",
+          "ref": "4522008"
+        },
+        {
+          "id": "c2-ai-split",
+          "ref": "FERN-15"
+        },
+        {
+          "id": "adr-004",
+          "ref": "4096266"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "rfc-ephemeral-baskets",
+      "ref": "4227104",
+      "kind": "page",
+      "trigger": true,
+      "cluster": null,
+      "recall": [
+        {
+          "id": "rfc-carts-redis-only",
+          "ref": "4194377"
+        },
+        {
+          "id": "c2-pm",
+          "ref": "4522008"
+        },
+        {
+          "id": "c2-inc-3",
+          "ref": "OPS-35"
+        },
+        {
+          "id": "c2-ai-split",
+          "ref": "FERN-15"
+        },
+        {
+          "id": "adr-004",
+          "ref": "4096266"
+        },
+        {
+          "id": "doc-checkout-flow",
+          "ref": "4390929"
+        },
+        {
+          "id": "c1-ai-pgbouncer",
+          "ref": "FERN-24"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c3-inc-1",
+      "ref": "OPS-9",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C3",
+      "recall": [
+        {
+          "id": "rfc-order-events",
+          "ref": "4456449"
+        },
+        {
+          "id": "st-shiplabel",
+          "ref": "FERN-12"
+        },
+        {
+          "id": "adr-002",
+          "ref": "4161569"
+        }
+      ],
+      "decoys": [
+        {
+          "id": "o-sms-ratelimit",
+          "ref": "OPS-3"
+        }
+      ]
+    },
+    {
+      "id": "c3-inc-2",
+      "ref": "OPS-19",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C3",
+      "recall": [
+        {
+          "id": "c3-inc-1",
+          "ref": "OPS-9"
+        },
+        {
+          "id": "c3-pm",
+          "ref": "4423712"
+        },
+        {
+          "id": "c3-ai-async",
+          "ref": "FERN-17"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c3-inc-3",
+      "ref": "OPS-34",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C3",
+      "recall": [
+        {
+          "id": "c3-inc-1",
+          "ref": "OPS-9"
+        },
+        {
+          "id": "c3-pm",
+          "ref": "4423712"
+        },
+        {
+          "id": "c3-ai-dedupe",
+          "ref": "FERN-19"
+        },
+        {
+          "id": "c3-ai-async",
+          "ref": "FERN-17"
+        },
+        {
+          "id": "rfc-order-events",
+          "ref": "4456449"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c3-inc-4",
+      "ref": "OPS-45",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C3",
+      "recall": [
+        {
+          "id": "c3-inc-1",
+          "ref": "OPS-9"
+        },
+        {
+          "id": "c3-inc-2",
+          "ref": "OPS-19"
+        },
+        {
+          "id": "c3-inc-3",
+          "ref": "OPS-34"
+        },
+        {
+          "id": "c3-pm",
+          "ref": "4423712"
+        },
+        {
+          "id": "c3-ai-async",
+          "ref": "FERN-17"
+        },
+        {
+          "id": "c3-ai-dedupe",
+          "ref": "FERN-19"
+        },
+        {
+          "id": "rb-kafka-lag",
+          "ref": "4521990"
+        }
+      ],
+      "decoys": [
+        {
+          "id": "o-kafka-disk",
+          "ref": "OPS-30"
+        },
+        {
+          "id": "o-warehouse-address",
+          "ref": "OPS-26"
+        }
+      ]
+    },
+    {
+      "id": "c9-inc-2",
+      "ref": "OPS-50",
+      "kind": "incident",
+      "trigger": true,
+      "cluster": "C9",
+      "recall": [
+        {
+          "id": "c9-inc-1",
+          "ref": "OPS-1"
+        },
+        {
+          "id": "c9-pm",
+          "ref": "4194341"
+        },
+        {
+          "id": "rb-cert-renewal",
+          "ref": "4161585"
+        },
+        {
+          "id": "c9-ai-automate",
+          "ref": "FERN-7"
+        },
+        {
+          "id": "c9-ai-alert",
+          "ref": "FERN-8"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c4-inc-1",
+      "ref": "OPS-11",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C4",
+      "recall": [
+        {
+          "id": "adr-005",
+          "ref": "4358185"
+        },
+        {
+          "id": "doc-payments-design",
+          "ref": "4259855"
+        },
+        {
+          "id": "st-webhooks",
+          "ref": "FERN-11"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c4-inc-2",
+      "ref": "OPS-29",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C4",
+      "recall": [
+        {
+          "id": "c4-inc-1",
+          "ref": "OPS-11"
+        },
+        {
+          "id": "c4-pm",
+          "ref": "4587521"
+        },
+        {
+          "id": "c4-ai-dedupe",
+          "ref": "FERN-21"
+        },
+        {
+          "id": "adr-005",
+          "ref": "4358185"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c4-inc-3",
+      "ref": "OPS-44",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C4",
+      "recall": [
+        {
+          "id": "c4-inc-1",
+          "ref": "OPS-11"
+        },
+        {
+          "id": "c4-inc-2",
+          "ref": "OPS-29"
+        },
+        {
+          "id": "c4-pm",
+          "ref": "4587521"
+        },
+        {
+          "id": "c4-ai-dedupe",
+          "ref": "FERN-21"
+        }
+      ],
+      "decoys": [
+        {
+          "id": "c8-inc-2",
+          "ref": "OPS-39"
+        }
+      ]
+    },
+    {
+      "id": "ep-gift-cards",
+      "ref": "FERN-38",
+      "kind": "epic",
+      "trigger": true,
+      "cluster": null,
+      "recall": [
+        {
+          "id": "adr-005",
+          "ref": "4358185"
+        },
+        {
+          "id": "doc-payments-design",
+          "ref": "4259855"
+        },
+        {
+          "id": "c4-pm",
+          "ref": "4587521"
+        },
+        {
+          "id": "c4-ai-dedupe",
+          "ref": "FERN-21"
+        },
+        {
+          "id": "c4-inc-1",
+          "ref": "OPS-11"
+        },
+        {
+          "id": "c4-inc-2",
+          "ref": "OPS-29"
+        },
+        {
+          "id": "c4-inc-3",
+          "ref": "OPS-44"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "st-gift-redeem",
+      "ref": "FERN-39",
+      "kind": "story",
+      "trigger": true,
+      "cluster": null,
+      "recall": [
+        {
+          "id": "adr-005",
+          "ref": "4358185"
+        },
+        {
+          "id": "c4-pm",
+          "ref": "4587521"
+        },
+        {
+          "id": "c4-ai-dedupe",
+          "ref": "FERN-21"
+        },
+        {
+          "id": "doc-checkout-flow",
+          "ref": "4390929"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "st-gift-ledger",
+      "ref": "FERN-40",
+      "kind": "story",
+      "trigger": true,
+      "cluster": null,
+      "recall": [
+        {
+          "id": "adr-005",
+          "ref": "4358185"
+        },
+        {
+          "id": "c4-pm",
+          "ref": "4587521"
+        },
+        {
+          "id": "c4-ai-dedupe",
+          "ref": "FERN-21"
+        },
+        {
+          "id": "doc-schema",
+          "ref": "4292626"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c5-inc-1",
+      "ref": "OPS-7",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C5",
+      "recall": [
+        {
+          "id": "doc-storefront-ssr",
+          "ref": "4292643"
+        },
+        {
+          "id": "adr-006",
+          "ref": "4456504"
+        },
+        {
+          "id": "st-srcset",
+          "ref": "FERN-13"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c5-inc-2",
+      "ref": "OPS-27",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C5",
+      "recall": [
+        {
+          "id": "c5-inc-1",
+          "ref": "OPS-7"
+        },
+        {
+          "id": "doc-storefront-ssr",
+          "ref": "4292643"
+        },
+        {
+          "id": "st-plant-finder",
+          "ref": "FERN-31"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c5-inc-3",
+      "ref": "OPS-46",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C5",
+      "recall": [
+        {
+          "id": "c5-inc-1",
+          "ref": "OPS-7"
+        },
+        {
+          "id": "c5-inc-2",
+          "ref": "OPS-27"
+        },
+        {
+          "id": "c5-ai-lint",
+          "ref": "FERN-32"
+        },
+        {
+          "id": "doc-storefront-ssr",
+          "ref": "4292643"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c6-inc-1",
+      "ref": "OPS-15",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C6",
+      "recall": [
+        {
+          "id": "doc-migration-guide",
+          "ref": "4292659"
+        },
+        {
+          "id": "doc-schema",
+          "ref": "4292626"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c6-inc-2",
+      "ref": "OPS-38",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C6",
+      "recall": [
+        {
+          "id": "c6-inc-1",
+          "ref": "OPS-15"
+        },
+        {
+          "id": "c6-pm",
+          "ref": "4522028"
+        },
+        {
+          "id": "c6-ai-linter",
+          "ref": "FERN-23"
+        },
+        {
+          "id": "doc-migration-guide",
+          "ref": "4292659"
+        }
+      ],
+      "decoys": [
+        {
+          "id": "o-replica-lag",
+          "ref": "OPS-37"
+        }
+      ]
+    },
+    {
+      "id": "st-orders-index",
+      "ref": "FERN-41",
+      "kind": "story",
+      "trigger": true,
+      "cluster": null,
+      "recall": [
+        {
+          "id": "doc-migration-guide",
+          "ref": "4292659"
+        },
+        {
+          "id": "c6-inc-1",
+          "ref": "OPS-15"
+        },
+        {
+          "id": "c6-pm",
+          "ref": "4522028"
+        },
+        {
+          "id": "c6-ai-linter",
+          "ref": "FERN-23"
+        },
+        {
+          "id": "c6-inc-2",
+          "ref": "OPS-38"
+        },
+        {
+          "id": "doc-schema",
+          "ref": "4292626"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c7-inc-1",
+      "ref": "OPS-22",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C7",
+      "recall": [
+        {
+          "id": "cap-mothers-day",
+          "ref": "4358201"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "c7-inc-2",
+      "ref": "OPS-41",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": "C7",
+      "recall": [
+        {
+          "id": "c7-inc-1",
+          "ref": "OPS-22"
+        },
+        {
+          "id": "c7-pm",
+          "ref": "4522059"
+        },
+        {
+          "id": "c7-ai-checklist",
+          "ref": "FERN-30"
+        },
+        {
+          "id": "cap-mothers-day",
+          "ref": "4358201"
+        },
+        {
+          "id": "st-k8s-migration",
+          "ref": "FERN-34"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "tk-black-friday",
+      "ref": "FERN-42",
+      "kind": "task",
+      "trigger": true,
+      "cluster": null,
+      "recall": [
+        {
+          "id": "cap-mothers-day",
+          "ref": "4358201"
+        },
+        {
+          "id": "c7-pm",
+          "ref": "4522059"
+        },
+        {
+          "id": "c7-ai-checklist",
+          "ref": "FERN-30"
+        },
+        {
+          "id": "c7-inc-1",
+          "ref": "OPS-22"
+        },
+        {
+          "id": "c7-inc-2",
+          "ref": "OPS-41"
+        },
+        {
+          "id": "c1-pm",
+          "ref": "4096292"
+        },
+        {
+          "id": "c1-ai-pgbouncer",
+          "ref": "FERN-24"
+        },
+        {
+          "id": "c1-ai-hpa",
+          "ref": "FERN-27"
+        },
+        {
+          "id": "adr-003",
+          "ref": "4358169"
+        },
+        {
+          "id": "c9-inc-1",
+          "ref": "OPS-1"
+        },
+        {
+          "id": "rb-cert-renewal",
+          "ref": "4161585"
+        }
+      ],
+      "decoys": []
+    },
+    {
+      "id": "o-promo-twice",
+      "ref": "OPS-13",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": null,
+      "recall": [],
+      "decoys": [
+        {
+          "id": "c4-inc-1",
+          "ref": "OPS-11"
+        }
+      ]
+    },
+    {
+      "id": "o-applepay",
+      "ref": "OPS-20",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": null,
+      "recall": [],
+      "decoys": [
+        {
+          "id": "c8-inc-1",
+          "ref": "OPS-18"
+        }
+      ]
+    },
+    {
+      "id": "o-warehouse-address",
+      "ref": "OPS-26",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": null,
+      "recall": [],
+      "decoys": [
+        {
+          "id": "c3-inc-2",
+          "ref": "OPS-19"
+        }
+      ]
+    },
+    {
+      "id": "o-uk-region-null",
+      "ref": "OPS-28",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": null,
+      "recall": [],
+      "decoys": [
+        {
+          "id": "c1-inc-1",
+          "ref": "OPS-14"
+        },
+        {
+          "id": "c6-inc-1",
+          "ref": "OPS-15"
+        }
+      ]
+    },
+    {
+      "id": "o-kafka-disk",
+      "ref": "OPS-30",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": null,
+      "recall": [],
+      "decoys": [
+        {
+          "id": "c3-inc-2",
+          "ref": "OPS-19"
+        }
+      ]
+    },
+    {
+      "id": "o-flag-pdp",
+      "ref": "OPS-32",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": null,
+      "recall": [],
+      "decoys": [
+        {
+          "id": "c5-inc-2",
+          "ref": "OPS-27"
+        }
+      ]
+    },
+    {
+      "id": "o-replica-lag",
+      "ref": "OPS-37",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": null,
+      "recall": [],
+      "decoys": [
+        {
+          "id": "c1-inc-3",
+          "ref": "OPS-33"
+        }
+      ]
+    },
+    {
+      "id": "o-consent-filter",
+      "ref": "OPS-40",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": null,
+      "recall": [],
+      "decoys": [
+        {
+          "id": "c3-inc-3",
+          "ref": "OPS-34"
+        }
+      ]
+    },
+    {
+      "id": "o-3ds-loop",
+      "ref": "OPS-43",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": null,
+      "recall": [],
+      "decoys": [
+        {
+          "id": "c8-inc-2",
+          "ref": "OPS-39"
+        }
+      ]
+    },
+    {
+      "id": "o-ratelimit-allowlist",
+      "ref": "OPS-49",
+      "kind": "incident",
+      "trigger": false,
+      "cluster": null,
+      "recall": [],
+      "decoys": [
+        {
+          "id": "c2-inc-4",
+          "ref": "OPS-48"
+        }
+      ]
+    }
+  ]
+}

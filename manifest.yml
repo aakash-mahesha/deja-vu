@@ -1,0 +1,202 @@
+modules:
+  jira:issuePanel:
+    - key: deja-vu-panel
+      resource: panel
+      resolver:
+        function: resolver
+      render: native
+      title: Déjà Vu
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+
+  jira:adminPage:
+    - key: deja-vu-admin
+      resource: admin
+      resolver:
+        function: resolver
+      render: native
+      title: Déjà Vu
+
+  rovo:agent:
+    - key: deja-vu-agent
+      name: Déjà Vu
+      description: Finds earlier occurrences of the same problem, how they were fixed, open follow-up debt, and the documents to read first.
+      prompt: resource:agent-prompt;prompt.md
+      conversationStarters:
+        - Has this happened before?
+        - What follow-up debt does checkout-api have?
+        - What should I read before working on this?
+      actions:
+        - find-related
+        - get-followup-debt
+        - link-related
+        - escalate-action-item
+
+  rovo:mcp:
+    - key: deja-vu-mcp
+      name: Déjà Vu
+      tools:
+        - find-related
+        - get-followup-debt
+
+  action:
+    - key: find-related
+      name: Find related history
+      function: find-related-fn
+      actionVerb: GET
+      description: Find earlier occurrences, how they were fixed, open follow-up action items, and related documents for an issue, page or problem description.
+      inputs:
+        issueKey:
+          title: Issue key
+          type: string
+          required: false
+          description: Jira issue key such as OPS-51. Leave empty to use the issue being viewed.
+        pageId:
+          title: Confluence page id
+          type: string
+          required: false
+          description: Numeric id of a Confluence page. Leave empty to use the page being viewed.
+        description:
+          title: Problem description
+          type: string
+          required: false
+          description: Free-text description or pasted error lines, used when there is no issue or page.
+    - key: get-followup-debt
+      name: Get follow-up debt
+      function: followup-debt-fn
+      actionVerb: GET
+      description: List open postmortem action items (owner, age, overdue days), optionally for one service.
+      inputs:
+        service:
+          title: Service
+          type: string
+          required: false
+          description: Service name or alias, such as checkout-api. Leave empty for all services.
+    - key: link-related
+      name: Link related issues
+      function: link-related-fn
+      actionVerb: UPDATE
+      description: Link an issue to past occurrences. Two-step - without confirmed=true it only returns a preview.
+      inputs:
+        issueKey:
+          title: Issue key
+          type: string
+          required: false
+          description: The issue to link from. Leave empty to use the issue being viewed.
+        relatedKeys:
+          title: Related issue keys
+          type: string
+          required: true
+          description: Comma-separated keys of the past occurrences to link.
+        confirmed:
+          title: Confirmed by the user
+          type: boolean
+          required: false
+          description: Set to true only after the user explicitly agreed to the preview.
+    - key: escalate-action-item
+      name: Escalate action item
+      function: escalate-fn
+      actionVerb: UPDATE
+      description: Escalate a stale postmortem action item to its owner with a comment. Two-step - without confirmed=true it only returns a preview.
+      inputs:
+        actionItemKey:
+          title: Action item key
+          type: string
+          required: true
+          description: Key of the open action item, such as FERN-24.
+        incidentKey:
+          title: Incident key
+          type: string
+          required: false
+          description: The incident that shows the problem came back. Leave empty to use the issue being viewed.
+        note:
+          title: Note
+          type: string
+          required: false
+          description: Optional short note to add to the comment.
+        confirmed:
+          title: Confirmed by the user
+          type: boolean
+          required: false
+          description: Set to true only after the user explicitly agreed to the preview.
+
+  trigger:
+    - key: issue-events
+      function: issue-event-fn
+      events:
+        - avi:jira:created:issue
+        - avi:jira:updated:issue
+        - avi:jira:deleted:issue
+    - key: page-events
+      function: page-event-fn
+      events:
+        - avi:confluence:created:page
+        - avi:confluence:updated:page
+    - key: lifecycle
+      function: lifecycle-fn
+      events:
+        - avi:forge:installed:app
+        - avi:forge:upgraded:app
+
+  scheduledTrigger:
+    - key: daily-sweep
+      function: daily-sweep-fn
+      interval: day
+
+  consumer:
+    - key: index-consumer
+      queue: deja-vu-index
+      function: index-worker-fn
+
+  sql:
+    - key: main
+      engine: mysql
+
+  function:
+    - key: resolver
+      handler: index.handler
+    - key: find-related-fn
+      handler: index.findRelatedAction
+    - key: followup-debt-fn
+      handler: index.followupDebtAction
+    - key: link-related-fn
+      handler: index.linkRelatedAction
+    - key: escalate-fn
+      handler: index.escalateAction
+    - key: issue-event-fn
+      handler: index.onIssueEvent
+    - key: page-event-fn
+      handler: index.onPageEvent
+    - key: lifecycle-fn
+      handler: index.onLifecycle
+    - key: daily-sweep-fn
+      handler: index.dailySweep
+    - key: index-worker-fn
+      handler: index.indexWorker
+      timeoutSeconds: 900
+
+resources:
+  - key: panel
+    path: src/frontend/panel.tsx
+  - key: admin
+    path: src/frontend/admin.tsx
+  - key: agent-prompt
+    path: src/agent
+
+permissions:
+  scopes:
+    - read:jira-work
+    - write:jira-work
+    - read:jira-user
+    - read:confluence-content.summary
+    - read:page:confluence
+    - read:label:confluence
+    - read:space:confluence
+    - search:confluence
+    - storage:app
+
+app:
+  runtime:
+    name: nodejs24.x
+    memoryMB: 512
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/f1eff482-d763-4515-ab93-d2ddd691bc97

@@ -1,0 +1,30 @@
+{
+  "name": "deja-vu",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --noEmit -p .",
+    "lint": "tsc --noEmit -p . && forge lint",
+    "eval": "node --no-warnings --import ./eval/ts-resolve.mjs eval/run-eval.mts",
+    "seed": "node --no-warnings scripts/push-seed.mts",
+    "seed:check": "node --no-warnings scripts/push-seed.mts --dry-run"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/react": "^18.3.12",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@forge/api": "^8.5.0",
+    "@forge/bridge": "^7.3.0",
+    "@forge/events": "^3.0.10",
+    "@forge/kvs": "^2.1.2",
+    "@forge/react": "^12.5.0",
+    "@forge/resolver": "^2.0.2",
+    "@forge/sql": "^4.0.10",
+    "react": "^18.2.0"
+  }
+}
